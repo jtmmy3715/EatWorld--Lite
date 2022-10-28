@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>EatWorld註冊驗證信</title>
+</head>
+
+<body>
+	<div>
+		<div align="center">
+			<div class="open_email"
+				style="margin-left: 8px; margin-top: 8px; margin-bottom: 8px; margin-right: 8px;">
+				<div>
+					<br> <span class="genEmailContent">
+						<div id="cTMail-Wrap"
+							style="word-break: break-all; box-sizing: border-box; text-align: center; min-width: 320px; max-width: 660px; border: 1px solid #f6f6f6; background-color: #f7f8fa; margin: auto; padding: 20px 0 30px; font-family: 'helvetica neue', PingFangSC-Light, arial, 'hiragino sans gb', 'microsoft yahei ui', 'microsoft yahei', simsun, sans-serif">
+							<div class="main-content" style="">
+								<table
+									style="width: 100%; font-weight: 300; margin-bottom: 10px; border-collapse: collapse">
+									<tbody>
+										<tr style="font-weight: 300">
+											<td style="max-width: 600px;">
+												<div id="cTMail-logo" style="width: 92px; height: 25px;">
+													<img
+														border="0"
+														src="https://i.ibb.co/RYK0kJv/logomail.png"
+														style="width: 150px; height: 50px; display: block; margin-bottom: 20px; margin-left:20px;">
+												</div>
+												<p
+													style="height: 2px; background-color: #FD841F; border: 0; font-size: 0; padding: 0; width: 100%; margin-top: 20px;"></p>
+
+												<div id="cTMail-inner"
+													style="background-color: #fff; padding: 23px 0 20px; box-shadow: 0px 1px 1px 0px rgba(122, 55, 55, 0.2); text-align: left; margin-left:20px; margin-right:20px;">
+													<table
+														style="width: 100%; font-weight: 300; margin-bottom: 10px; border-collapse: collapse; text-align: left;">
+														<tbody>
+															<tr style="font-weight: 300">
+																<td style="width: 3.2%; max-width: 30px;"></td>
+																	<h1 id="cTMail-title"
+																		style="font-size: 20px; line-height: 36px; margin: 0px 0px 22px; color: black;">
+																		EatWorld會員註冊驗證信</h1>
+
+																	<h3><p id="cTMail-userName"
+																		style="font-size: 14px; color: black; line-height: 24px; margin-left:20px;">親愛的 <span th:text="${name}"></span> 您好：</p></h3>
+																	
+
+																	<p class="cTMail-content"
+																		style="line-height: 24px; margin-left:20px; overflow-wrap: break-word; word-break: break-all;">
+																		<span style="color: black; font-size: 14px;">我們已收到您的註冊申請</span>
+																	</p>
+																	<p class="cTMail-content"
+																		style="line-height: 24px; margin-left:20px; overflow-wrap: break-word; word-break: break-all;">
+																		<span style="color: black; font-size: 14px;">請點擊以下按鈕進行驗證</span>
+																	</p>
+
+																	<p class="cTMail-content"
+																		style="font-size: 14px; color: rgb(51, 51, 51); line-height: 24px; margin: 6px 0px 0px; word-wrap: break-word; word-break: break-all;">
+																		<a id="cTMail-btn" th:href="@{'http://localhost:8080/EatWorld/verify?token='+${uuid}}" title=""
+																			style="font-size: 16px; line-height: 45px; display: block; background-color: #FD841F; color: rgb(255, 255, 255); text-align: center; text-decoration: none; margin-top: 20px; border-radius: 3px; margin-left:20px; margin-right:20px;">
+																			請點擊此處驗證信箱</a>
+																	</p>
+																	<p class="cTMail-content"
+																		style="line-height: 24px; margin-left:20px; overflow-wrap: break-word; word-break: break-all;">
+																		<span style="color: black; font-size: 14px;">若有其他問題，請聯繫此Email: <b>EatWorld2022@gmail.com</b></span>
+																	</p>
+																	<dl style="font-size: 14px; color: black; line-height: 18px;">
+																		<dd
+																			style="margin-left:20px; padding: 0px; font-size: 12px; line-height: 22px;">
+																			<p id="cTMail-sender"
+																				style="font-size: 14px; line-height: 26px; word-wrap: break-word; word-break: break-all; margin-top: 32px; color: black;">
+																				祝您一切順心、平安<br> <strong>EatWorld吃窩團隊 敬上</strong>
+																			</p>
+																		</dd>
+																	</dl>
+																</td> 
+																<td style="width:3.2%; max-width:30px;"></td>
+															</tr>
+														</tbody>
+													</table>
+												</div> 
+												<div id="cTMail-copy"
+													style="text-align: center; font-size: 12px; line-height: 18px; color: #999">
+													<table
+														style="width: 100%; font-weight: 300; margin-bottom: 10px; border-collapse: collapse">
+														<tbody>
+															<tr style="font-weight: 300">
+																<td style="width: 3.2%; max-width: 30px;"></td>
+																<td style="max-width: 540px;">
+																	<p
+																		style="text-align: center; margin: 20px auto 14px auto; font-size: 12px; color: #999;">
+																		此為系統郵件，請勿回覆此郵件。</p>
+																		
+														</tbody>
+													</table>
+												</div> 
+
+</body>
+</html>

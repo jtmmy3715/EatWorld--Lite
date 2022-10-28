@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>EatWorld商品購買清單</title>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            body {
+                background-color: #ECECEC;
+            }
+
+            .container {
+                width: 800px;
+                margin: 50px auto;
+            }
+
+            .header {
+                height: 80px;
+                background-color: #FD841F;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                padding-left: 30px;
+            }
+
+            .header h2 {
+                padding-top: 25px;
+                color: white;
+            }
+
+            .content {
+                background-color: #fff;
+                padding-left: 30px;
+                padding-bottom: 30px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            .content h2 {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            .content p {
+                padding-top: 10px;
+            }
+
+            .footer {
+                background-color: #fff;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                padding: 35px;
+            }
+
+            .footer p {
+                color: #747474;
+                padding-top: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="header">
+            	<h2><img alt="" src="https://upload.cc/i1/2022/10/26/IrsRlg.jpg"  width="35" height="35" style="border-radius:20px;">
+            			EatWorld商品購買通知信
+            	</h2>
+            </div>
+            <div class="content">
+                <h2>親愛的<span th:text="${name}"></span>您好：</h2>
+                <p>我們已收到您的訂單</p>
+                <p>訂單編號:<span th:text= "${orderid}">請查詢會員訂單</span></p>
+       			<p>訂單時間:<span th:text= "${ordertime}">無</span></p>
+       			<p>訂購商品 :</p>
+                <table border="1" th:object="${allOrderDetail}">
+				  <thead>
+				    <tr>
+				      <th>商品編號</th>
+				      <th>名稱</th>
+				      <th>數量</th>
+				    </tr>
+				  </thead>
+				  <tfoot>
+				    <tr>
+				      <td>總金額</td>
+				      <td th:text="${order_sum}">$0</td>
+				    </tr>
+				  </tfoot>
+				
+				  <tbody>
+				  	<tr th:if="${allOrderDetail.empty}">
+            			<td colspan="2"> 查無訂單 </td>
+       				</tr>
+       				 
+				    <tr th:each="orderDetailBean: ${allOrderDetail}">
+					  	<td th:text="${orderDetailBean.productBean.product_id}">無</td>
+				      	<td th:text="${orderDetailBean.productBean.name}">無</td>
+				      	<td th:text="${orderDetailBean.qulity}">0</td>
+				    
+				    </tr>
+				    <tr th:each="orderDetailBeanC: ${allOrderDetailCombo}">
+					  	<td th:text="${orderDetailBeanC.comboBean.combo_id}">無</td>
+				      	<td th:text="${orderDetailBeanC.comboBean.combo_name}">無</td>
+				      	<td th:text="${orderDetailBeanC.qulity}">0</td>
+				    </tr>
+				    
+ 				  </tbody>
+				</table>
+                <p>若有其他問題，請聯繫此Email: <b>EatWorld2022@gmail.com</b></p>
+                <p>祝您一切順心、平安</p>
+                <p>EatWorld吃窩團隊 敬上</p>
+                
+            </div>
+            <div class="footer">
+                <p>此為系統郵件，請勿回覆此郵件</p>
+            </div>
+        </div>
+    </body>
+
+</html>

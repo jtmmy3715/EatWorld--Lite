@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>EatWorld會員註冊驗證信</title>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            body {
+                background-color: #ECECEC;
+            }
+
+            .container {
+                width: 800px;
+                margin: 50px auto;
+            }
+
+            .header {
+                height: 80px;
+                background-color: #FD841F;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                padding-left: 30px;
+            }
+
+            .header h2 {
+                padding-top: 25px;
+                color: white;
+            }
+
+            .content {
+                background-color: #fff;
+                padding-left: 30px;
+                padding-bottom: 30px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            .content h2 {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            .content p {
+                padding-top: 10px;
+            }
+
+            .footer {
+                background-color: #fff;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                padding: 35px;
+            }
+
+            .footer p {
+                color: #747474;
+                padding-top: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="header">
+            <img src="resources/images/user.png" width="80" height="80"><h2>EatWorld會員註冊驗證信</h2>
+            </div>
+            <div class="content">
+                <h2>親愛的<span th:text="${name}"></span>您好：</h2>
+                <p>我們已收到您的註冊申請</p>
+                <p>請點選連結進行驗證</p>
+                <p>若有其他問題，請聯繫此Email: <b>EatWorld2022@gmail.com</b></p>
+                <p>祝您一切順心、平安</p>
+                <p>EatWorld吃窩團隊 敬上</p>
+                
+            </div>
+            <div class="footer">
+                <p>此為系統郵件，請勿回覆此郵件</p>
+            </div>
+        </div>
+    </body>
+
+</html>
